@@ -1,0 +1,22 @@
+{
+  "name": "mlm-refferal-tracking",
+  "version": "1.0.0",
+  "description": "Multilevel Marketing Refferal Tracking system and assigning rewards based on 3 layers deep refferal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mlm",
+    "refferal",
+    "tracking"
+  ],
+  "author": "Rupesh Garhwal <rupeshgarhwal3920@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12",
+    "morgan": "^1.10.0"
+  }
+}
