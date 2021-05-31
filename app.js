@@ -9,5 +9,7 @@ app.use(express.static("public"));
 
 app.use(morgan("dev"));
 
+const userRoutes = require('./routes/userRoutes');
+app.use("/api", userRoutes);
 
 module.exports = app;
