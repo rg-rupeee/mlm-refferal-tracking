@@ -15,7 +15,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const userRoutes = require("./routes/userRoutes");
-app.use("/api", userRoutes);
+const walletRoutes = require("./routes/walletRoutes");
+app.use("/api/user", userRoutes);
+app.use("/api/wallet", walletRoutes);
 
 // 404 route not found
 app.all("*", (req, res, next) => {
@@ -24,6 +26,8 @@ app.all("*", (req, res, next) => {
 
 // Global error handling middleware
 app.use((err, req, res, next) => {
+  console.log("global Error handling middle ware");
+  console.log(err);
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "fail";
   return res.status(err.statusCode).json({

@@ -6,6 +6,9 @@ const walletModel = new mongoose.Schema({
     ref: 'User',
     required: [true, "A wallet must belong to a user"],
   },
+  userId: {
+    type: Number
+  },
   credits: {
     type: Number,
     default: 0,

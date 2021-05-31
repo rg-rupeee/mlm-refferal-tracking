@@ -1,5 +1,7 @@
 const User = require("./../model/userModel");
 
+const walletController = require('./walletController');
+
 const catchAsync = require("./../utils/catchAsync");
 const AppError = require("./../utils/appError");
 
@@ -20,6 +22,8 @@ exports.createUser = catchAsync(async (req, res, next) => {
 
   // console.log(req.body);
   const user = await User.create(req.body);
+
+  walletController.createWallet(user._id, user.userId);
 
   return res.status(201).json({
     status: "success",
