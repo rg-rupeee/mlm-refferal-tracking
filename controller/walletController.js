@@ -49,8 +49,8 @@ exports.getWalletById = catchAsync(async (req, res, next) => {
 });
 
 exports.addCredit = catchAsync(async (req, res, next) => {
-  console.log(req.params.userId);
-  console.log(req.body);
+  // console.log(req.params.userId);
+  // console.log(req.body);
   // find user with 3 level deep populate
   const userWallet = await Wallet.findOne({
     userId: req.params.userId,

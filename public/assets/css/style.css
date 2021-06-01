@@ -1,0 +1,61 @@
+:root {
+  --primary: #202020;
+  --secondary: #ffdf6c;
+  --tertiary: #3f3f3f;
+  --quaternary: #707070;
+  --white: #ffffff;
+  --whiteSec: #fafafa;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--white);
+  background: var(--quaternary);
+}
+
+::selection {
+  color: var(--white);
+  background: var(--quaternary);
+}
+
+body {
+  background-color: var(--whiteSec);
+  font-family: "Poppins", sans-serif;
+}
+
+.main-header {
+  background-color: var(--primary);
+  padding-top: 5vh;
+  box-shadow: 3px 3px 5px var(--quaternary);
+  color: var(--white);
+  padding-bottom: 8vh;
+}
+
+.main-title {
+  font-weight: 800;
+  color: var(--white);
+}
+
+.main-subtitle {
+  color: var(--quaternary);
+}
+
+.page-wrapper{
+  min-height: 50vh;
+}
+
+.main-footer {
+  background-color: var(--quaternary);
+}
+
+.github-icon {
+  border-radius: 50%;
+}
+
+.github-icon:hover {
+  background-color: var(--secondary);
+}
+
+.github-project {
+  color: var(--tertiary);
+}
