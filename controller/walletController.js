@@ -74,6 +74,8 @@ exports.addCredit = catchAsync(async (req, res, next) => {
     );
   }
 
+  const creditDetails = [];
+
   const userAmt = userWallet.credits;
 
   let parent1, parent2, parent3;
@@ -104,6 +106,10 @@ exports.addCredit = catchAsync(async (req, res, next) => {
     }
   );
 
+  creditDetails.push(
+    `added ${req.body.credit} credits to user with id: ${req.params.userId}`
+  );
+
   // if parent 1 exists -> find wallet -> add credits
   let updatedp1Wallet;
   if (parent1) {
@@ -123,7 +129,12 @@ exports.addCredit = catchAsync(async (req, res, next) => {
         runValidators: true,
       }
     );
-    console.log(updatedp1Wallet);
+    // console.log(updatedp1Wallet);
+    creditDetails.push(
+      `parent1: added ${parseInt(req.body.credit) * 0.4} credits to user with id: ${
+        parent1.userId
+      } `
+    );
   }
 
   // if parent 2 exits -> find wallet -> add credits
@@ -144,7 +155,12 @@ exports.addCredit = catchAsync(async (req, res, next) => {
         runValidators: true,
       }
     );
-    console.log(updatedp2Wallet);
+    // console.log(updatedp2Wallet);
+    creditDetails.push(
+      `parent2: added ${parseInt(req.body.credit) * 0.2} credits to user with id: ${
+        parent2.userId
+      } `
+    );
   }
 
   // if parent 3 exists -> find wallet -> add credits
@@ -165,15 +181,20 @@ exports.addCredit = catchAsync(async (req, res, next) => {
         runValidators: true,
       }
     );
-    console.log(updatedp3Wallet);
+    // console.log(updatedp3Wallet);
+    creditDetails.push(
+      `parent3: added ${parseInt(req.body.credit) * 0.1} credits to user with id: ${
+        parent3.userId
+      } `
+    );
   }
 
   return res.json({
     message: "hello",
+    creditDetails,
     updatedUserWallet,
     updatedp1Wallet,
     updatedp2Wallet,
     updatedp3Wallet,
-    userWallet,
   });
 });
