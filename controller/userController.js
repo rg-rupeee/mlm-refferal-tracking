@@ -1,4 +1,5 @@
 const User = require("./../model/userModel");
+const Wallet = require("./../model/walletModel");
 
 const walletController = require('./walletController');
 
@@ -94,8 +95,11 @@ exports.deleteUserById = catchAsync(async (req, res, next) => {
       new AppError(`no user found with id : ${req.params.userId}`, 400)
     );
   }
+  // delete user wallet as well
+  await Wallet.findOneAndDelete({userId: req.params.userId});
 
   await User.findByIdAndDelete(user._id);
+  
 
   return res.status(204).json({
     status: "success",

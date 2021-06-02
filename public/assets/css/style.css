@@ -20,6 +20,7 @@
 
 body {
   background-color: var(--whiteSec);
+  /* background-color: #202020; */
   font-family: "Poppins", sans-serif;
 }
 
@@ -61,8 +62,11 @@ body {
 }
 
 
-@media only screen and (max-width: 700px) {  
+@media only screen and (max-width: 768px) {  
   .credit-container {    
-    flex-direction : column-reverse;  
+    flex-direction : column-reverse;
   }  
+  .user-container{
+    flex-direction: column-reverse;
+  }
 }

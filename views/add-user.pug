@@ -7,7 +7,7 @@ head
   link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous')
   // custom css
   link(rel='stylesheet' href='assets/css/style.css')
-  title Add Credits | Referral Tracking System
+  title Add User | Referral Tracking System
   // Google Fonts
   link(rel='preconnect' href='https://fonts.gstatic.com')
   link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap' rel='stylesheet')
@@ -18,9 +18,10 @@ head
       h1.main-title.py-3 Add User
   .page-wrapper.my-2
     .container-fluid.my-2
-      .row.credit-container
-        .col-md-8
+      .row.user-container
+        .col-md-7
           form.my-5.py-3.px-2
+            h3.mb-3 Add User
             .mb-3
               label.form-label(for='userName') User Name
               input#userName.form-control(type='text' placeholder='Name of user')
@@ -29,21 +30,22 @@ head
               input#userId.form-control(type='text' aria-describedby='userIdhelp' placeholder='userId to be assigned')
               #userIdhelp.form-text
                 | Do not use duplicate userId. It must be a number and should not
-                | belong to existing user.
+                | belong to any existing user.
             .mb-3
               label.form-label(for='parentId') parentId
               input#parentId.form-control(type='text' aria-describedby='parentIdhelp' placeholder="reffered by user's Id")
-              #parentIdhelp.form-text  userId of existing user who refferd you.
-            button.btn.btn-primary(type='submit') Create User
-        .col-md-4
-          .alert.alert-primary.alert-dismissible.fade.show.mb-1(role='alert')
-            strong User Created
+              #parentIdhelp.form-text  userId of existing user who reffered you.
+            button.btn.btn-primary.create-user(type='submit') Create User
+        .col-md-5
+          .alert.alert-primary.alert-dismissible.fade.show.mb-1.alert-created(role='alert')
+            span 
+              strong User Created
             button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
-          .alert.alert-warning.alert-dismissible.fade.show.mb-1(role='alert')
-            | All Feilds are required
+          .alert.alert-warning.alert-dismissible.fade.show.mb-1.alert-required(role='alert')
+            span User Name and User Id required
             button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
-          .alert.alert-danger.alert-dismissible.fade.show.mb-1(role='alert')
-            | Duplicate userId
+          .alert.alert-danger.alert-dismissible.fade.show.mb-1.alert-backend(role='alert')
+            span.alert-backend-text Duplicate userId
             button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
   footer.container-fluid.m-0.main-footer.text-center.p-3
     a(href='https://github.com/rg-rupeee')
@@ -56,4 +58,5 @@ head
       a.github-project(href='https://github.com/rg-rupeee/mlm-refferal-tracking') here
 // Option 1: Bootstrap Bundle with Popper
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous')
+script(src='https://unpkg.com/axios/dist/axios.min.js')
 script(src='assets/js/script2.js')
