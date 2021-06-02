@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>Add Credits | Referral Tracking System</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <div class="container-fluid m-0 p-0">
+    <header class="container-fluid p-0 m-0">
+      <div class="container-fluid text-center main-header m-0">
+        <h1 class="main-title py-3">Add User</h1>
+      </div>
+    </header>
+
+    <div class="page-wrapper my-2">
+      <div class="container-fluid my-2">
+        <div class="row credit-container">
+          <div class="col-md-8">
+            <form class="my-5 py-3 px-2">
+              <div class="mb-3">
+                <label for="userName" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="userName" placeholder="Name of user">
+              </div>
+              <div class="mb-3">
+                <label for="userId" class="form-label">UserId</label>
+                <input type="text" class="form-control" id="userId" aria-describedby="userIdhelp"
+                  placeholder="userId to be assigned">
+                <div id="userIdhelp" class="form-text"> Do not use duplicate userId. It must be a number and should not
+                  belong to existing user.</div>
+              </div>
+              <div class="mb-3">
+                <label for="parentId" class="form-label">parentId</label>
+                <input type="text" class="form-control" id="parentId" aria-describedby="parentIdhelp"
+                  placeholder="reffered by user's Id">
+                <div id="parentIdhelp" class="form-text"> userId of existing user who refferd you.</div>
+              </div>
+              <button type="submit" class="btn btn-primary">Create User</button>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <div class="alert alert-primary alert-dismissible fade show mb-1" role="alert">
+              <strong>User Created</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-warning alert-dismissible fade show mb-1" role="alert">
+              All Feilds are required
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show mb-1" role="alert">
+              Duplicate userId
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid m-0 main-footer text-center p-3">
+      <a href="https://github.com/rg-rupeee">
+        <img src="assets/icons/github.svg" alt="" height="30px" width="30px" class="github-icon">
+      </a>
+      <div class="footer-title pt-4 pb-0 fs-6">
+        This project is made by <b> Rupesh Garhwal </b>
+      </div>
+      <div class="footer-subtitle p-0 fs-6">
+        checkout the source code <a href="https://github.com/rg-rupeee/mlm-refferal-tracking"
+          class="github-project">here</a>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <script src="assets/js/script2.js"></script>
+</body>
+
+</html>

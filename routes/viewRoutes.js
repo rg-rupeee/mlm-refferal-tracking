@@ -9,4 +9,6 @@ router.route("/user-details").get(viewController.getUserDetails);
 
 router.route("/add-credit").get(viewController.getAddCredit);
 
+router.route("/add-user").get(viewController.getAddUser);
+
 module.exports = router;

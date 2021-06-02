@@ -57,3 +57,7 @@ exports.getAddCredit = catchAsync(async (req, res, next) => {
     id: req.query.userId,
   });
 });
+
+exports.getAddUser = catchAsync(async (req, res, next) => {
+  res.render("add-user");
+})
