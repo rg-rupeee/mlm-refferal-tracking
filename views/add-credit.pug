@@ -1,0 +1,60 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Bootstrap CSS
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous')
+  // custom css
+  link(rel='stylesheet' href='assets/css/style.css')
+  title Add Credits | Referral Tracking System
+  // Google Fonts
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css')
+.container-fluid.m-0.p-0
+  header.container-fluid.p-0.m-0
+    .container-fluid.text-center.main-header.m-0
+      h1.main-title.py-3 Add Credit
+  .page-wrapper.my-2
+    .container-fluid.my-2
+      .row.credit-container
+        .col-md-7
+          form.my-5.py-3.px-2
+            .mb-3
+              label.form-label(for='input-userId') User Id
+              input#input-userId.form-control(type='text' value=`${id}` readonly='')
+            .mb-3
+              .input-group.mb-3
+                span#basic-addon1.input-group-text  Amount 
+                input#input-credit-amt.form-control(type='text' placeholder='Credit Amount')
+            button.btn.btn-primary(type='submit') Add Credits to User Wallet
+        .col-md-5
+          .alert.alert-success.alert-dismissible.fade.show.mb-1.alert-credit(role='alert')
+            strong Credited
+            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+          .alert.alert-warning.alert-dismissible.fade.show.mb-1.alert-user1(role='alert')
+            | added 500 credits to user with id: 2
+            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+          .alert.alert-warning.alert-dismissible.fade.show.mb-1.alert-parent1(role='alert')
+            | added 500 credits to user with id: 2
+            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+          .alert.alert-warning.alert-dismissible.fade.show.mb-1.alert-parent2(role='alert')
+            | added 500 credits to user with id: 2
+            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+          .alert.alert-warning.alert-dismissible.fade.show.alert-parent3(role='alert')
+            | added 500 credits to user with id: 2
+            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+  footer.container-fluid.m-0.main-footer.text-center.p-3
+    a(href='https://github.com/rg-rupeee')
+      img.github-icon(src='assets/icons/github.svg' alt='' height='30px' width='30px')
+    .footer-title.pt-4.pb-0.fs-6
+      | This project is made by 
+      b  Rupesh Garhwal 
+    .footer-subtitle.p-0.fs-6
+      | checkout the source code 
+      a.github-project(href='https://github.com/rg-rupeee/mlm-refferal-tracking') here
+script(src='assets/js/script.js')
+// Option 1: Bootstrap Bundle with Popper
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js' integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==' crossorigin='anonymous' referrerpolicy='no-referrer')

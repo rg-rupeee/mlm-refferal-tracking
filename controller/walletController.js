@@ -67,6 +67,7 @@ exports.addCredit = catchAsync(async (req, res, next) => {
     },
   });
   // console.log(userWallet);
+  // console.log(JSON.stringify(userWallet, null, 4));
 
   if (!userWallet) {
     return next(
@@ -76,7 +77,7 @@ exports.addCredit = catchAsync(async (req, res, next) => {
 
   const creditDetails = [];
 
-  const userAmt = userWallet.credits;
+  // const userAmt = userWallet.credits;
 
   let parent1, parent2, parent3;
   if (userWallet.user.parent) {
@@ -196,5 +197,6 @@ exports.addCredit = catchAsync(async (req, res, next) => {
     updatedp1Wallet,
     updatedp2Wallet,
     updatedp3Wallet,
+    userWallet
   });
 });

@@ -14,10 +14,18 @@ if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
 }
 
+// View Engine
+app.set("view engine", "pug");
+app.set("views", "./views");
+
 const userRoutes = require("./routes/userRoutes");
 const walletRoutes = require("./routes/walletRoutes");
+const viewRoutes = require("./routes/viewRoutes");
+app.use("/", viewRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/wallet", walletRoutes);
+
+
 
 // 404 route not found
 app.all("*", (req, res, next) => {
