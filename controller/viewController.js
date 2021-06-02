@@ -28,7 +28,7 @@ exports.getUserDetails = catchAsync(async (req, res, next) => {
       },
     },
   });
-  console.log(JSON.stringify(userWallet, null, 4));
+  // console.log(JSON.stringify(userWallet, null, 4));
   let user = {};
   user.credits = userWallet.credits;
   user.name = userWallet.user.name;
